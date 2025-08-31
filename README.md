@@ -3,6 +3,9 @@
 Welcome to the **Data Warehouse and Analytics Project** repository! 🚀  
 This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. Designed as a portfolio project, it highlights industry best practices in data engineering and analytics.
 
+> This project was completed as a guided hands-on exercise under the instruction of **Baraa Al-Sheikh**.  
+> The course focused on building an SQL-based data warehouse from scratch, covering end-to-end data engineering practices.
+
 ---
 
 ## 🏗️ Data Architecture
@@ -12,9 +15,36 @@ The data architecture for this project follows Medallion Architecture **Bronze**
 ![Data Architecture – Medallion](docs/data_architecture.drawio.png)  
 
 
-1. **Bronze Layer**: Stores raw data as-is from the source systems. Data is ingested from CSV Files into SQL Server Database.  
-2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.  
-3. **Gold Layer**: Houses business-ready data modeled into a star schema required for reporting and analytics.
+1. **Bronze Layer**: Stores raw data as-is from source systems. Data is ingested from CSV files into SQL Server.  
+2. **Silver Layer**: Cleansing, standardization, and normalization to prepare data for analysis.  
+3. **Gold Layer**: Business-ready data modeled into a star schema for reporting and analytics.
+
+---
+
+## ⚙️ ETL Methods Implemented
+
+![ETL Methods – used during the project](docs/ETL.png)  
+
+
+**Extraction — techniques used**
+- **Pull extraction** (scheduled pulls from sources)  
+- **Full extraction** (regular full-file loads)  
+- **Database querying** (SQL queries on sources)  
+- **File parsing (CSV)** (file ingestion & validation)
+
+**Load — approaches used**
+- **Processing type: Batch processing**  
+- **Full load → Truncate & Insert** (reload target tables)  
+- **Slowly Changing Dimensions: SCD Type 1 (Overwrite)** for dimension maintenance
+
+**Transformation — steps used**
+- **Data cleansing**: remove duplicates, filtering, handle missing/invalid values, trim unwanted spaces, data type casting, outlier detection  
+- **Data normalization & standardization**  
+- **Business rules & logic** (apply business validations)  
+- **Data aggregations** (metrics and rollups)  
+- **Derived columns** (computed attributes)  
+- **Data integration** (unifying ERP & CRM sources)  
+- **Data enrichment** (contextual enhancements)
 
 ---
 
@@ -39,10 +69,11 @@ The data architecture for this project follows Medallion Architecture **Bronze**
 
 ---
 
-## 📒 Data Catalog (Dokumentáció)
+## 📒 Data Catalog (Documentation)
 
-A részletes adatleírások és üzleti definíciók a katalógusban:  
+Detailed field descriptions and business definitions are in the catalog:  
 ➡️ [Data Catalog](docs/data_catalog.md)
+
 
 
 ---
@@ -61,12 +92,18 @@ Develop a modern data warehouse using SQL Server to consolidate sales data, enab
 - **Scope**: Focus on the latest dataset only; historization of data is not required.  
 - **Documentation**: Provide clear documentation of the data model to support both business stakeholders and analytics teams.  
 
+---
 
-## 🔧 (Opcionális) SQL minták
+## 📊 BI: Analytics & Reporting (Data Analytics)
 
-<details>
-<summary>Kattints az SQL példákhoz (később ide illeszthetők)</summary>
+#### Objective
+Develop SQL-based analytics to deliver detailed insights into:  
+- **Customer Behavior**  
+- **Product Performance**  
+- **Sales Trends**  
 
-```sql
--- Példa: Silver rétegbeli normalizálás / tisztítás
--- (Ide illesztheted a projektben használt lekérdezéseket.)
+These insights empower stakeholders with key business metrics for strategic decision-making.
+
+---
+
+
